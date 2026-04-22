@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Are You Sure?</title>
+
+<style>
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 55vh;
+}
+
+.box {
+  width: 300px;
+  height: 200px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  color: white;
+  border: 2px solid grey;
+}
+
+.formpage {
+  display: none;
+}
+
+.btn {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid grey;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="page1">
+  <h1>Are You Sure?</h1>
+
+  <div class="btn">
+    <button onclick="nextpage()">Yes</button>
+    <button onclick="no()">No</button>
+  </div>
+</div>
+
+<div class="box formpage" id="page2">
+  <h2>Masukan Input</h2>
+  <input type="text" id="nama" placeholder="Masukan Teks">
+  <br>
+  <button onclick="kirim()">Submit</button>
+</div>
+
+<script>
+function nextpage() {
+  document.getElementById("page1").style.display = "none";
+  document.getElementById("page2").style.display = "flex";
+}
+
+function no() {
+  document.getElementById("page1").style.display = "none";
+  alert("Lebih Baik...");
+}
+
+function kirim() {
+  let isi = document.getElementById("nama").value.toLowerCase();
+
+  if (isi === "y") {
+    alert("bisu lu males ngomong?");
+  } else if (isi === "kontol") {
+    alert("oh btw ini sistem untuk mendeskripsikan tentang sistem ini bukan tentangmu...");
+  } else if (isi === "billy") {
+    alert("ngapain?");
+  } else if (isi ==="faustin") {
+    alert("Ontel?");
+  } else if (isi ==="memek") {
+    alert("oh btw ini sistem untuk mendeskripsikan tentang sistem ini bukan tentangmu...");
+  } else if (isi ==="kntl") {
+    alert("oh btw ini sistem untuk mendeskripsikan tentang sistem ini bukan tentangmu...");
+ } else if (isi ==="") {
+    alert("teks kosong");
+  } else {
+    alert("Error Dari = >" + isi + "< Jawaban tidak ditemukan!");
+  }
+}
+</script>
+
+</body>
+</html>
